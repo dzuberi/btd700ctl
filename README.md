@@ -69,4 +69,4 @@ sudo udevadm trigger
 - all the good people of the world
 
 ## license
-**btd700ctl** is distributed under the GNU LGPL-2.1 License. please see the [LICENSE](LICENSE.md) file for more details.
+**btd700ctl** is distributed under the GNU LGPL-2.1 License. please see the [LICENSE](LICENSE) file for more details.
