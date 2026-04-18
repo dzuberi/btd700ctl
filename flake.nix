@@ -27,7 +27,7 @@
 
             postInstall = ''
               install -Dm644 ../udev/99-btd700.rules -t $out/lib/udev/rules.d/
-              substituteInPlace $out/share/systemd/user/btd700d.service \
+              substituteInPlace $out/lib/systemd/user/btd700d.service \
                 --replace-fail "/usr/local/bin/btd700d" "$out/bin/btd700d"
             '';
 
