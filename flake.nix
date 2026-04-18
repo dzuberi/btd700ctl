@@ -27,6 +27,8 @@
 
             postInstall = ''
               install -Dm644 ../udev/99-btd700.rules -t $out/lib/udev/rules.d/
+              substituteInPlace $out/share/systemd/user/btd700d.service \
+                --replace-fail "/usr/local/bin/btd700d" "$out/bin/btd700d"
             '';
 
             meta = with pkgs.lib; {
@@ -45,7 +47,6 @@
         systemd.packages = [ self.packages.${pkgs.system}.default ];
         systemd.user.services.btd700d = {
           wantedBy = [ "default.target" ];
-          serviceConfig.ExecStart = "${self.packages.${pkgs.system}.default}/bin/btd700d";
         };
       };
     };
